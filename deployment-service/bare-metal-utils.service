@@ -1,0 +1,16 @@
+#!/bin/bash
+
+[Unit]
+Description=Bare metal utilities for cake-robotics servers
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/services/com.cakerobotics.servers.france-1.utils
+EnvironmentFile=/services/com.cakerobotics.servers.france-1.utils/.env
+Environment=FLASK_CONFIG=production
+ExecStart=/usr/local/bin/gunicorn -b localhost:5050 -w 4 main:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

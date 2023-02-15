@@ -1,0 +1,4 @@
+pip install -r requirements
+cp bare-metal-utils.service /etc/systemd/system/
+systemctl enable bare-metal-utils.service
+systemctl start bare-metal-utils.service

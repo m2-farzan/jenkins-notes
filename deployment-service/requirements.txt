@@ -1,0 +1,3 @@
+Flask-OIDC
+gunicorn
+requests
